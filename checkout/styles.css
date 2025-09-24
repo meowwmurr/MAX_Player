@@ -6,17 +6,18 @@
 }
 
 body {
-background: linear-gradient(204deg, #5081dd, #000000);
-align-items: center;
-justify-content: center;
-color: white;
-min-height: 100vh;
-display: flex;
+    background: linear-gradient(204deg, #5081dd, #000000);
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
 }
 
 .container {
     text-align: center;
     padding: 30px;
+    width: 30em;
 }
 
 .player {
@@ -89,4 +90,8 @@ button {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.music-time{
+    margin-left: auto;
 }
