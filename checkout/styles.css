@@ -1,4 +1,92 @@
-body {
-background-color: #181818;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+background: linear-gradient(204deg, #5081dd, #000000);
+align-items: center;
+justify-content: center;
+color: white;
+min-height: 100vh;
+display: flex;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+}
+
+.player {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.albumCover {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    background: linear-gradient(45deg, #adb2bd, #1c3e88);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+    font-size: 130px;
+    align-items: center;
+    justify-items: center;
+    animation-play-state: paused;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;  
+}
+
+.volume-slider {
+    flex-grow: 1;
+    height: 5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    
+}
+
+.playlist {
+    margin-top: 30px;
+    overflow-y: auto;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+}
+
+.playlist-item {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
