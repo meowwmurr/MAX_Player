@@ -78,11 +78,14 @@ button {
 }
 
 .playlist {
-    margin-top: 30px;
-    overflow-y: auto;
-    border-radius: 10px;
+    position: relative;
     background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    width: 100%;
+    top: 10px;
 }
 
 .playlist-item {
@@ -106,3 +109,36 @@ button {
 	box-shadow: inset 0 0 0 1.5px #FFFF;
 }
 
+.player {
+
+}
+
+.player-header {
+    position: relative; /* Для позиционирования кнопки */
+    margin-bottom: 5%;
+}
+
+.addButton {
+    position: absolute;
+    top: 10px; /* Смещение вверх за пределы заголовка */
+    right: 10px; /* Смещение вправо за пределы заголовка */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 10;
+}
+
+.addButton:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
