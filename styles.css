@@ -12,7 +12,7 @@ body {
     color: white;
     min-height: 100vh;
     display: flex;
-    padding-bottom: 64px; /* avoid overlap with bottom banner */
+    padding-bottom: 64px;
 }
 
 .container {
@@ -126,4 +126,5 @@ button {
 
 .promo-banner:hover {
     filter: brightness(1.06);
+
 }
