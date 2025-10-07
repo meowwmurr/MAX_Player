@@ -1,4 +1,4 @@
-package Max;
+package Max.model;
 
 public class PlayList{
     private class PlayListItem<Song>{
