@@ -1,9 +1,11 @@
 package Max;
+import Max.collections.MyList;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class UI extends JFrame {
+    private MyList<String> playlist;
     private DefaultListModel<String> listModel;
     private JList<String> trackList;
     private JLabel curTrack;

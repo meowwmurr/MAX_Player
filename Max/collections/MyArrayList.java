@@ -13,6 +13,12 @@ public class MyArrayList<T> implements MyList<T> {
         size = 0;
     }
 
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
+    }
+
     @Override
     public void add(T element) {
         ensureCapacity();
@@ -28,10 +34,10 @@ public class MyArrayList<T> implements MyList<T> {
     @Override
     public T remove(int index) {
         checkIndex(index);
-        T removed = (T) elements[index];
+        T removeElement = (T) elements[index];
         elements[index] = null;
         size--;
-        return removed;
+        return removeElement;
     }
 
     @Override
@@ -45,19 +51,13 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<T> iterator() {
         return new MyArrayListIterator();
     }
 
     private void ensureCapacity() {
-        if (size == elements.length) {
+        if(size == elements.length) {
             elements = Arrays.copyOf(elements, size * 2);
-        }
-    }
-
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
     }
 
