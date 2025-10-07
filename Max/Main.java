@@ -7,5 +7,7 @@ public class Main {
         QueueMusic<Integer> queue = new QueueMusic<>();
         queue = queue.newQueue(1, 2, 3, 4, 5);
         System.out.println(queue.toString());
+        UI app = new UI();
+        app.setVisible(true);
     }
 }
