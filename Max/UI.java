@@ -22,17 +22,17 @@ public class UI extends JFrame {
         add(topPanel, BorderLayout.NORTH);
 
         JPanel controls = new JPanel();
+        JButton prevButton = new JButton("⏮ Prev");
         JButton playButton = new JButton("▶ PLay");
         JButton stopButton = new JButton("◼ Stop");
+        JButton skipButton = new JButton("Skip ⏭");
+
+        controls.add(prevButton);
         controls.add(playButton);
         controls.add(stopButton);
+        controls.add(skipButton);
         add(controls, BorderLayout.SOUTH);
 
-    }
-
-    public static void main(String[] args) {
-        UI app = new UI();
-        app.setVisible(true);
     }
 
 }
