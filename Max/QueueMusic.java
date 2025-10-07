@@ -1,7 +1,7 @@
 package Max;
 
 public class QueueMusic<E>{
-    private class QueueMusicItem<E> {
+    private static class QueueMusicItem<E> {
         public E value;
         public QueueMusicItem<E> next;
 
@@ -9,6 +9,8 @@ public class QueueMusic<E>{
             this.value = value;
             this.next = next;
         }
+
+
     }
 
     private QueueMusicItem<E> head = null;
@@ -33,7 +35,7 @@ public class QueueMusic<E>{
         size++;
     }
 
-    public E dequeue() throws Exception {
+    public void dequeue() throws Exception {
         if (head == null) {
             throw new Exception("Queue is empty");
         }
@@ -43,9 +45,9 @@ public class QueueMusic<E>{
             tail = null;
         }
         size--;
-        return value;
     }
 
+    @SafeVarargs
     public final QueueMusic<E> newQueue(E ... values) {
         int n = values.length;
         if(n == 0){
