@@ -50,6 +50,11 @@ public class MyArrayList<T> implements MyList<T> {
         return size == 0;
     }
 
+    public void clear() {
+        elements = new Object[DEFAULT_CAPACITY];
+        size = 0;
+    }
+
     @Override
     public Iterator<T> iterator() {
         return new MyArrayListIterator();
