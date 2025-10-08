@@ -1,4 +1,4 @@
-package Max.test.integration;
+package Max.tests.integration;
 
 import Max.UI;
 import Max.collections.MyArrayList;

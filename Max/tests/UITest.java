@@ -1,4 +1,4 @@
-package Max.test;
+package Max.tests;
 
 import Max.UI;
 import Max.collections.MyArrayList;
@@ -6,13 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.io.File;
 import java.lang.reflect.Field;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
