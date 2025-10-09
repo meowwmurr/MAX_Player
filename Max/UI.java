@@ -90,10 +90,28 @@ public class UI extends JFrame {
         try {
             File file = new File(dirSongs.get(index));
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+            
+            // Получаем формат аудио
+            AudioFormat baseFormat = audioStream.getFormat();
+            
+            // Преобразуем в поддерживаемый формат, если необходимо
+            AudioFormat decodedFormat = new AudioFormat(
+                    AudioFormat.Encoding.PCM_SIGNED,
+                    baseFormat.getSampleRate(),
+                    16,
+                    baseFormat.getChannels(),
+                    baseFormat.getChannels() * 2,
+                    baseFormat.getSampleRate(),
+                    false);
+            
+            // Создаем поток с преобразованным форматом
+            AudioInputStream decodedStream = AudioSystem.getAudioInputStream(decodedFormat, audioStream);
+            
             currentClip = AudioSystem.getClip();
-            currentClip.open(audioStream);
+            currentClip.open(decodedStream);
             currentClip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
+            ex.printStackTrace(); // Для отладки
             JOptionPane.showMessageDialog(this, "Ошибка при воспроизведении: " + ex.getMessage());
         }
     }

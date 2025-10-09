@@ -35,7 +35,13 @@ public class MyArrayList<T> implements MyList<T> {
     public T remove(int index) {
         checkIndex(index);
         T removeElement = (T) elements[index];
-        elements[index] = null;
+        
+        // Сдвигаем все элементы после удаляемого на одну позицию влево
+        if (index < size - 1) {
+            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        }
+        
+        elements[size - 1] = null; // Очищаем последний элемент
         size--;
         return removeElement;
     }
